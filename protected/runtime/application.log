@@ -23,3 +23,26 @@ REQUEST_URI=/galery/index.php?r=albums%2Fdelete&id=30&ajax=albums-grid
 in /var/www/galery/protected/models/Albums.php (146)
 in /var/www/galery/protected/controllers/AlbumsController.php (119)
 in /var/www/galery/index.php (13)
+2012/04/17 19:24:35 [error] [exception.CDbException] exception 'CDbException' with message 'CDbConnection failed to open the DB connection: SQLSTATE[28000] [1045] Access denied for user 'root'@'localhost' (using password: YES)' in Z:\home\galery\www\yii\framework\db\CDbConnection.php:382
+Stack trace:
+#0 Z:\home\galery\www\yii\framework\db\CDbConnection.php(331): CDbConnection->open()
+#1 Z:\home\galery\www\yii\framework\db\CDbConnection.php(309): CDbConnection->setActive(true)
+#2 Z:\home\galery\www\yii\framework\base\CModule.php(388): CDbConnection->init()
+#3 Z:\home\galery\www\yii\framework\base\CApplication.php(431): CModule->getComponent('db')
+#4 Z:\home\galery\www\yii\framework\db\ar\CActiveRecord.php(615): CApplication->getDb()
+#5 Z:\home\galery\www\yii\framework\db\ar\CActiveRecord.php(2263): CActiveRecord->getDbConnection()
+#6 Z:\home\galery\www\yii\framework\db\ar\CActiveRecord.php(379): CActiveRecordMetaData->__construct(Object(Users))
+#7 Z:\home\galery\www\galery\protected\models\Users.php(22): CActiveRecord::model('Users')
+#8 Z:\home\galery\www\galery\protected\controllers\SiteController.php(36): Users::model()
+#9 Z:\home\galery\www\yii\framework\web\actions\CInlineAction.php(50): SiteController->actionIndex()
+#10 Z:\home\galery\www\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#11 Z:\home\galery\www\yii\framework\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#12 Z:\home\galery\www\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 Z:\home\galery\www\yii\framework\web\CWebApplication.php(276): CController->run('')
+#14 Z:\home\galery\www\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('')
+#15 Z:\home\galery\www\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#16 Z:\home\galery\www\galery\index.php(13): CApplication->run()
+#17 {main}
+REQUEST_URI=/galery/
+HTTP_REFERER=http://galery/
+---

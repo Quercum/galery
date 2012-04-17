@@ -1,0 +1,17 @@
+#galery_item {
+    display: inline-block;
+    margin: 0 10px 10px 0;
+    padding: 10px 0;
+    width: 150px;
+    border: 1px solid black;
+    text-align: center;
+}
+
+#galery_item img {
+    border: 1px solid #000;
+    width: 130px;
+}
+
+#galery_item p {
+    margin: 0;
+}

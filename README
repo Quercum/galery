@@ -8,6 +8,7 @@ Galery - Readme
 /var/www/galery, тогда фреймворк должен быть в папке /var/www/yii.
 Короче, смотрите пути к фреймворку в index.php.
 
-(c)2012, Андрей necros0ft Гусев <necro.gus_at_gmail.com>
+Copyright (c)2012, Андрей necros0ft Гусев <necro.gus_at_gmail.com>
 
-Можете копировать, изменять и т.п. 
+Данная система является свободным ПО и распространяется
+под лицензией BSD.

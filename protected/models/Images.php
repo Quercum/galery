@@ -6,11 +6,13 @@
  * The followings are the available columns in table '{{images}}':
  * @property integer $id
  * @property integer $album_id
+ * @property integer $user_id
  * @property string $title
  * @property string $filename
  */
 class Images extends CActiveRecord
 {
+    public $image;
 	/**
 	 * Returns the static model of the specified AR class.
 	 * @param string $className active record class name.
@@ -40,9 +42,11 @@ class Images extends CActiveRecord
 			array('album_id', 'numerical', 'integerOnly'=>true),
 			array('title', 'length', 'max'=>90),
 			array('filename', 'length', 'max'=>255),
+                        array('image','file','types'=>'jpg, jpeg, png'),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
 			array('id, album_id, title, filename', 'safe', 'on'=>'search'),
+                        array('title, filename','required', 'on'=>'insert'),
 		);
 	}
 
@@ -64,9 +68,10 @@ class Images extends CActiveRecord
 	{
 		return array(
 			'id' => 'ID',
-			'album_id' => 'Album',
-			'title' => 'Title',
-			'filename' => 'Filename',
+			'album_id' => 'Альбом',
+                        'user_id' => 'Пользователь',
+			'title' => 'Название',
+			'filename' => 'Путь к файлу',
 		);
 	}
 
@@ -106,7 +111,7 @@ class Images extends CActiveRecord
             ));
             $image = Images::model()->find($criteria);
             $count = Images::model()->count($criteria);
-            if($count==1)
+            if($count>1)
                 return Yii::app()->baseUrl.'/images/'.$userId.'/'.$image->album_id.
                     '/'.$image->filename;
             else
@@ -116,14 +121,15 @@ class Images extends CActiveRecord
         
         public function getLastFromAlb($albumId)
         {
-            $image = Images::model()->find(array(
+            $criteria = new CDbCriteria(array(
                 'select'=> 'user_id,filename',
                 'condition'=>'album_id=:album_id',
                 'order'=>'id DESC',
                 'limit'=>1,
                 'params'=>array(':album_id'=>$albumId),
             ));
-            if(Images::model()->count($image)!=0)
+            $image = Images::model()->find($criteria);
+            if(Images::model()->count($criteria)!=0)
                 return Yii::app()->baseUrl.'/images/'.$image->user_id.
                     '/'.$albumId.'/'.$image->filename;
             else

@@ -147,4 +147,17 @@ class Albums extends CActiveRecord
             }
             closedir($handle);
         }
+        
+        public function getAlbumAuthor($id)
+        {
+            $criteria = new CDbCriteria(array(
+                'select'=>'user_id',
+                'condition'=>'id=:id',
+                'params'=>array(
+                    ':id'=>$id,
+                ),
+            ));
+              $album = Albums::model()->find($criteria);
+              return $album->user_id;
+        }
 }

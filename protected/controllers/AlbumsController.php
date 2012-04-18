@@ -31,7 +31,7 @@ class AlbumsController extends Controller
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('create','update','delete','admin'),
+				'actions'=>array('create','update','delete','admin','upload'),
 				'users'=>array('@'),
 			),
 			
@@ -49,10 +49,11 @@ class AlbumsController extends Controller
 	{
             $imagesModel = new Images();
             $images = $imagesModel->getData($id);
+            $userId = Albums::getAlbumAuthor($id);
             $this->render('view',array(
 		'model'=>$this->loadModel($id),
                 'dataProvider'=>$images,
-                'id'=>Yii::app()->user->id,
+                'id'=>$userId,
             ));
 	}
 
@@ -163,6 +164,34 @@ class AlbumsController extends Controller
 			'model'=>$model,
 		));
 	}
+        
+        public function actionUpload($id)
+        {
+            $model = new Images('insert');
+            if(isset($_POST['Images']))
+            {
+                $model->attributes = $_POST['Images'];
+                $model->album_id = $id;
+                $model->user_id = Yii::app()->user->id;
+                $model->image = CUploadedFile::getInstance($model, 'filename');
+                $model->filename = time().'.'.$model->image->extensionName;
+                if($model->validate())
+                {
+                    if($model->save())
+                    {
+                        $model->image->saveAs('images'.DS.Yii::app()->user->id.DS.
+                                $id.DS.$model->filename);                        
+                        Yii::app()->user->setFlash('success','Файл успешно загружен. '.$backLink);
+                        $this->render('upload',array('id'=>$id));
+                    }
+                }else{
+                    Yii::app()->user->setFlash('error','Не все поля заполнены.');
+                    $this->refresh();
+                }
+            }else
+                $this->render('upload',array('model'=>$model));            
+        }       
+        
 
 	/**
 	 * Returns the data model based on the primary key given in the GET variable.

@@ -5,6 +5,7 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
+        array('label'=>'Добавить картинку', 'url'=>array('upload', 'id'=>$model->id)),
 	array('label'=>'Список альбомов', 'url'=>array('index', 'id'=>$id)),
 	array('label'=>'Создать альбом', 'url'=>array('create')),
 	array('label'=>'Изменить альбом', 'url'=>array('update', 'id'=>$model->id)),

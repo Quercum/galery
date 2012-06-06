@@ -10,7 +10,7 @@ $this->menu=array(
 	array('label'=>'Создать альбом', 'url'=>array('create')),
 	array('label'=>'Изменить альбом', 'url'=>array('update', 'id'=>$model->id)),
 	array('label'=>'Удалить альбом', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->id),'confirm'=>'Are you sure you want to delete this item?')),
-	array('label'=>'Управление альбомами', 'url'=>array('admin')),
+	array('label'=>'Управление картинками', 'url'=>array('images/admin', 'id'=>$model->id)),
 );
 ?>
 

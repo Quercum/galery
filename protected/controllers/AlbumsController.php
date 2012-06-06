@@ -2,7 +2,7 @@
 
 class AlbumsController extends Controller
 {
-	/**
+    /**
 	 * @var string the default layout for the views. Defaults to '//layouts/column2', meaning
 	 * using two-column layout. See 'protected/views/layouts/column2.php'.
 	 */
@@ -34,7 +34,7 @@ class AlbumsController extends Controller
 				'actions'=>array('create','update','delete','admin','upload'),
 				'users'=>array('@'),
 			),
-			
+
 			array('deny',  // deny all users
 				'users'=>array('*'),
 			),
@@ -120,8 +120,8 @@ class AlbumsController extends Controller
 			$model->cleanAlbum($path);
                         rmdir($path);
                         $model->delete();
-                        
-                        
+
+
 			// if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
 			if(!isset($_GET['ajax']))
 				$this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('admin'));
@@ -134,12 +134,12 @@ class AlbumsController extends Controller
 	 * Lists all models.
 	 */
 	public function actionIndex($id)
-	{            
-		$criteria = new CDbCriteria(array(                    
-                    'select'=>'id,title',
-                    'condition'=>'user_id=:id',                    
-                    'order'=>'id DESC',
-                    'params'=>array(':id'=>$id),
+	{
+		$criteria = new CDbCriteria(array(
+                    'select'    =>'id,title',
+                    'condition' =>'user_id=:id',
+                    'order'     =>'id DESC',
+                    'params'    =>array(':id'=>$id),
                 ));
                 $dataProvider = new CActiveDataProvider('Albums',array(
                     'criteria'=>$criteria,
@@ -164,7 +164,7 @@ class AlbumsController extends Controller
 			'model'=>$model,
 		));
 	}
-        
+
         public function actionUpload($id)
         {
             $model = new Images('insert');
@@ -180,7 +180,7 @@ class AlbumsController extends Controller
                     if($model->save())
                     {
                         $model->image->saveAs('images'.DS.Yii::app()->user->id.DS.
-                                $id.DS.$model->filename);                        
+                                $id.DS.$model->filename);
                         Yii::app()->user->setFlash('success','Файл успешно загружен. '.$backLink);
                         $this->render('upload',array('id'=>$id));
                     }
@@ -189,9 +189,9 @@ class AlbumsController extends Controller
                     $this->refresh();
                 }
             }else
-                $this->render('upload',array('model'=>$model));            
-        }       
-        
+                $this->render('upload',array('model'=>$model));
+        }
+
 
 	/**
 	 * Returns the data model based on the primary key given in the GET variable.

@@ -515,3 +515,361 @@ REQUEST_URI=/galery/index.php?r=albums/view&id=16
 in Z:\home\galery\www\galery\protected\views\layouts\column2.php (16)
 in Z:\home\galery\www\galery\protected\controllers\AlbumsController.php (57)
 in Z:\home\galery\www\galery\index.php (14)
+2012/04/21 15:14:18 [error] [php] include(CButtonsColumn.php) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory (Z:\home\galery\www\yii\framework\YiiBase.php:418)
+Stack trace:
+#0 Z:\home\galery\www\yii\framework\YiiBase.php(198): import()
+#1 Z:\home\galery\www\yii\framework\zii\widgets\grid\CGridView.php(313): createComponent()
+#2 Z:\home\galery\www\yii\framework\zii\widgets\grid\CGridView.php(284): CGridView->initColumns()
+#3 Z:\home\galery\www\yii\framework\web\CBaseController.php(148): CGridView->init()
+#4 Z:\home\galery\www\yii\framework\web\CBaseController.php(173): ImagesController->createWidget()
+#5 Z:\home\galery\www\galery\protected\views\images\index.php(12): ImagesController->widget()
+#6 Z:\home\galery\www\yii\framework\web\CBaseController.php(127): require()
+#7 Z:\home\galery\www\yii\framework\web\CBaseController.php(96): ImagesController->renderInternal()
+#8 Z:\home\galery\www\yii\framework\web\CController.php(870): ImagesController->renderFile()
+#9 Z:\home\galery\www\yii\framework\web\CController.php(783): ImagesController->renderPartial()
+#10 Z:\home\galery\www\galery\protected\controllers\ImagesController.php(24): ImagesController->render()
+#11 Z:\home\galery\www\yii\framework\web\actions\CInlineAction.php(50): ImagesController->actionAdmin()
+#12 Z:\home\galery\www\yii\framework\web\CController.php(309): CInlineAction->runWithParams()
+#13 Z:\home\galery\www\yii\framework\web\CController.php(287): ImagesController->runAction()
+#14 Z:\home\galery\www\yii\framework\web\CController.php(266): ImagesController->runActionWithFilters()
+#15 Z:\home\galery\www\yii\framework\web\CWebApplication.php(276): ImagesController->run()
+#16 Z:\home\galery\www\yii\framework\web\CWebApplication.php(135): CWebApplication->runController()
+#17 Z:\home\galery\www\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#18 Z:\home\galery\www\galery\index.php(14): CWebApplication->run()
+REQUEST_URI=/galery/index.php?r=images/admin&id=15
+in Z:\home\galery\www\galery\protected\views\images\index.php (12)
+in Z:\home\galery\www\galery\protected\controllers\ImagesController.php (24)
+in Z:\home\galery\www\galery\index.php (14)
+2012/04/21 15:14:46 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "view".' in Z:\home\galery\www\yii\framework\web\CController.php:484
+Stack trace:
+#0 Z:\home\galery\www\yii\framework\web\CController.php(271): CController->missingAction('view')
+#1 Z:\home\galery\www\yii\framework\web\CWebApplication.php(276): CController->run('view')
+#2 Z:\home\galery\www\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('images/view')
+#3 Z:\home\galery\www\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 Z:\home\galery\www\galery\index.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/galery/index.php?r=images/view&id=13
+HTTP_REFERER=http://galery/galery/index.php?r=images/admin&id=15
+---
+2012/04/21 15:23:13 [error] [exception.CException] exception 'CException' with message 'Property "Images.img" is not defined.' in Z:\home\galery\www\yii\framework\base\CComponent.php:131
+Stack trace:
+#0 Z:\home\galery\www\yii\framework\db\ar\CActiveRecord.php(144): CComponent->__get('img')
+#1 Z:\home\galery\www\yii\framework\web\helpers\CHtml.php(2044): CActiveRecord->__get('img')
+#2 Z:\home\galery\www\yii\framework\web\helpers\CHtml.php(1774): CHtml::resolveValue(Object(Images), 'img')
+#3 Z:\home\galery\www\yii\framework\web\helpers\CHtml.php(1205): CHtml::activeInputField('text', Object(Images), 'img', Array)
+#4 Z:\home\galery\www\yii\framework\zii\widgets\grid\CDataColumn.php(105): CHtml::activeTextField(Object(Images), 'img', Array)
+#5 Z:\home\galery\www\yii\framework\zii\widgets\grid\CGridColumn.php(106): CDataColumn->renderFilterCellContent()
+#6 Z:\home\galery\www\yii\framework\zii\widgets\grid\CGridView.php(450): CGridColumn->renderFilterCell()
+#7 Z:\home\galery\www\yii\framework\zii\widgets\grid\CGridView.php(428): CGridView->renderFilter()
+#8 Z:\home\galery\www\yii\framework\zii\widgets\grid\CGridView.php(398): CGridView->renderTableHeader()
+#9 Z:\home\galery\www\yii\framework\zii\widgets\CBaseListView.php(158): CGridView->renderItems()
+#10 [internal function]: CBaseListView->renderSection(Array)
+#11 Z:\home\galery\www\yii\framework\zii\widgets\CBaseListView.php(141): preg_replace_callback('/{(\w+)}/', Array, '{summary}?{item...')
+#12 Z:\home\galery\www\yii\framework\zii\widgets\CBaseListView.php(126): CBaseListView->renderContent()
+#13 Z:\home\galery\www\yii\framework\web\CBaseController.php(174): CBaseListView->run()
+#14 Z:\home\galery\www\galery\protected\views\images\index.php(17): CBaseController->widget('zii.widgets.gri...', Array)
+#15 Z:\home\galery\www\yii\framework\web\CBaseController.php(127): require('Z:\home\galery\...')
+#16 Z:\home\galery\www\yii\framework\web\CBaseController.php(96): CBaseController->renderInternal('Z:\home\galery\...', Array, true)
+#17 Z:\home\galery\www\yii\framework\web\CController.php(870): CBaseController->renderFile('Z:\home\galery\...', Array, true)
+#18 Z:\home\galery\www\yii\framework\web\CController.php(783): CController->renderPartial('index', Array, true)
+#19 Z:\home\galery\www\galery\protected\controllers\ImagesController.php(25): CController->render('index', Array)
+#20 [internal function]: ImagesController->actionAdmin('15')
+#21 Z:\home\galery\www\yii\framework\web\actions\CAction.php(107): ReflectionMethod->invokeArgs(Object(ImagesController), Array)
+#22 Z:\home\galery\www\yii\framework\web\actions\CInlineAction.php(48): CAction->runWithParamsInternal(Object(ImagesController), Object(ReflectionMethod), Array)
+#23 Z:\home\galery\www\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#24 Z:\home\galery\www\yii\framework\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#25 Z:\home\galery\www\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#26 Z:\home\galery\www\yii\framework\web\CWebApplication.php(276): CController->run('admin')
+#27 Z:\home\galery\www\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('images/admin')
+#28 Z:\home\galery\www\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#29 Z:\home\galery\www\galery\index.php(14): CApplication->run()
+#30 {main}
+REQUEST_URI=/galery/index.php?r=images/admin&id=15
+HTTP_REFERER=http://galery/galery/index.php?r=albums/view&id=15
+---
+2012/04/21 15:24:41 [error] [exception.CException] exception 'CException' with message 'Property "Images.img" is not defined.' in Z:\home\galery\www\yii\framework\base\CComponent.php:131
+Stack trace:
+#0 Z:\home\galery\www\yii\framework\db\ar\CActiveRecord.php(144): CComponent->__get('img')
+#1 Z:\home\galery\www\yii\framework\web\helpers\CHtml.php(2044): CActiveRecord->__get('img')
+#2 Z:\home\galery\www\yii\framework\web\helpers\CHtml.php(1774): CHtml::resolveValue(Object(Images), 'img')
+#3 Z:\home\galery\www\yii\framework\web\helpers\CHtml.php(1205): CHtml::activeInputField('text', Object(Images), 'img', Array)
+#4 Z:\home\galery\www\yii\framework\zii\widgets\grid\CDataColumn.php(105): CHtml::activeTextField(Object(Images), 'img', Array)
+#5 Z:\home\galery\www\yii\framework\zii\widgets\grid\CGridColumn.php(106): CDataColumn->renderFilterCellContent()
+#6 Z:\home\galery\www\yii\framework\zii\widgets\grid\CGridView.php(450): CGridColumn->renderFilterCell()
+#7 Z:\home\galery\www\yii\framework\zii\widgets\grid\CGridView.php(428): CGridView->renderFilter()
+#8 Z:\home\galery\www\yii\framework\zii\widgets\grid\CGridView.php(398): CGridView->renderTableHeader()
+#9 Z:\home\galery\www\yii\framework\zii\widgets\CBaseListView.php(158): CGridView->renderItems()
+#10 [internal function]: CBaseListView->renderSection(Array)
+#11 Z:\home\galery\www\yii\framework\zii\widgets\CBaseListView.php(141): preg_replace_callback('/{(\w+)}/', Array, '{summary}?{item...')
+#12 Z:\home\galery\www\yii\framework\zii\widgets\CBaseListView.php(126): CBaseListView->renderContent()
+#13 Z:\home\galery\www\yii\framework\web\CBaseController.php(174): CBaseListView->run()
+#14 Z:\home\galery\www\galery\protected\views\images\index.php(17): CBaseController->widget('zii.widgets.gri...', Array)
+#15 Z:\home\galery\www\yii\framework\web\CBaseController.php(127): require('Z:\home\galery\...')
+#16 Z:\home\galery\www\yii\framework\web\CBaseController.php(96): CBaseController->renderInternal('Z:\home\galery\...', Array, true)
+#17 Z:\home\galery\www\yii\framework\web\CController.php(870): CBaseController->renderFile('Z:\home\galery\...', Array, true)
+#18 Z:\home\galery\www\yii\framework\web\CController.php(783): CController->renderPartial('index', Array, true)
+#19 Z:\home\galery\www\galery\protected\controllers\ImagesController.php(25): CController->render('index', Array)
+#20 [internal function]: ImagesController->actionAdmin('15')
+#21 Z:\home\galery\www\yii\framework\web\actions\CAction.php(107): ReflectionMethod->invokeArgs(Object(ImagesController), Array)
+#22 Z:\home\galery\www\yii\framework\web\actions\CInlineAction.php(48): CAction->runWithParamsInternal(Object(ImagesController), Object(ReflectionMethod), Array)
+#23 Z:\home\galery\www\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#24 Z:\home\galery\www\yii\framework\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#25 Z:\home\galery\www\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#26 Z:\home\galery\www\yii\framework\web\CWebApplication.php(276): CController->run('admin')
+#27 Z:\home\galery\www\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('images/admin')
+#28 Z:\home\galery\www\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#29 Z:\home\galery\www\galery\index.php(14): CApplication->run()
+#30 {main}
+REQUEST_URI=/galery/index.php?r=images/admin&id=15
+HTTP_REFERER=http://galery/galery/index.php?r=albums/view&id=15
+---
+2012/04/21 15:25:29 [error] [php] Division by zero (Z:\home\galery\www\yii\framework\base\CComponent.php(607) : eval()'d code:1)
+Stack trace:
+#0 Z:\home\galery\www\yii\framework\zii\widgets\grid\CGridColumn.php(138): CDataColumn->renderDataCellContent()
+#1 Z:\home\galery\www\yii\framework\zii\widgets\grid\CGridView.php(517): CDataColumn->renderDataCell()
+#2 Z:\home\galery\www\yii\framework\zii\widgets\grid\CGridView.php(490): CGridView->renderTableRow()
+#3 Z:\home\galery\www\yii\framework\zii\widgets\grid\CGridView.php(400): CGridView->renderTableBody()
+#4 Z:\home\galery\www\yii\framework\zii\widgets\CBaseListView.php(158): CGridView->renderItems()
+#5 unknown(0): CGridView->renderSection()
+#6 Z:\home\galery\www\yii\framework\zii\widgets\CBaseListView.php(141): preg_replace_callback()
+#7 Z:\home\galery\www\yii\framework\zii\widgets\CBaseListView.php(126): CGridView->renderContent()
+#8 Z:\home\galery\www\yii\framework\web\CBaseController.php(174): CGridView->run()
+#9 Z:\home\galery\www\galery\protected\views\images\index.php(16): ImagesController->widget()
+#10 Z:\home\galery\www\yii\framework\web\CBaseController.php(127): require()
+#11 Z:\home\galery\www\yii\framework\web\CBaseController.php(96): ImagesController->renderInternal()
+#12 Z:\home\galery\www\yii\framework\web\CController.php(870): ImagesController->renderFile()
+#13 Z:\home\galery\www\yii\framework\web\CController.php(783): ImagesController->renderPartial()
+#14 Z:\home\galery\www\galery\protected\controllers\ImagesController.php(25): ImagesController->render()
+#15 unknown(0): ImagesController->actionAdmin()
+#16 Z:\home\galery\www\yii\framework\web\actions\CAction.php(107): ReflectionMethod->invokeArgs()
+#17 Z:\home\galery\www\yii\framework\web\actions\CInlineAction.php(48): CInlineAction->runWithParamsInternal()
+#18 Z:\home\galery\www\yii\framework\web\CController.php(309): CInlineAction->runWithParams()
+#19 Z:\home\galery\www\yii\framework\web\CController.php(287): ImagesController->runAction()
+#20 Z:\home\galery\www\yii\framework\web\CController.php(266): ImagesController->runActionWithFilters()
+#21 Z:\home\galery\www\yii\framework\web\CWebApplication.php(276): ImagesController->run()
+#22 Z:\home\galery\www\yii\framework\web\CWebApplication.php(135): CWebApplication->runController()
+#23 Z:\home\galery\www\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#24 Z:\home\galery\www\galery\index.php(14): CWebApplication->run()
+REQUEST_URI=/galery/index.php?r=images/admin&id=15
+in Z:\home\galery\www\galery\protected\views\images\index.php (16)
+in Z:\home\galery\www\galery\protected\controllers\ImagesController.php (25)
+in Z:\home\galery\www\galery\index.php (14)
+2012/04/22 12:34:22 [error] [php] htmlspecialchars() expects parameter 1 to be string, object given (Z:\home\galery\www\yii\framework\web\helpers\CHtml.php:85)
+Stack trace:
+#0 Z:\home\galery\www\yii\framework\web\CBaseController.php(174): CBreadcrumbs->run()
+#1 Z:\home\galery\www\galery\protected\views\layouts\main.php(44): ImagesController->widget()
+#2 Z:\home\galery\www\yii\framework\web\CBaseController.php(127): require()
+#3 Z:\home\galery\www\yii\framework\web\CBaseController.php(96): ImagesController->renderInternal()
+#4 Z:\home\galery\www\yii\framework\web\widgets\CContentDecorator.php(77): ImagesController->renderFile()
+#5 Z:\home\galery\www\yii\framework\web\widgets\CContentDecorator.php(55): CContentDecorator->decorate()
+#6 Z:\home\galery\www\yii\framework\web\widgets\COutputProcessor.php(45): CContentDecorator->processOutput()
+#7 Z:\home\galery\www\yii\framework\web\CBaseController.php(207): CContentDecorator->run()
+#8 Z:\home\galery\www\yii\framework\web\CBaseController.php(301): ImagesController->endWidget()
+#9 Z:\home\galery\www\galery\protected\views\layouts\column1.php(5): ImagesController->endContent()
+#10 Z:\home\galery\www\yii\framework\web\CBaseController.php(127): require()
+#11 Z:\home\galery\www\yii\framework\web\CBaseController.php(96): ImagesController->renderInternal()
+#12 Z:\home\galery\www\yii\framework\web\CController.php(785): ImagesController->renderFile()
+#13 Z:\home\galery\www\galery\protected\controllers\ImagesController.php(25): ImagesController->render()
+#14 unknown(0): ImagesController->actionAdmin()
+#15 Z:\home\galery\www\yii\framework\web\actions\CAction.php(107): ReflectionMethod->invokeArgs()
+#16 Z:\home\galery\www\yii\framework\web\actions\CInlineAction.php(48): CInlineAction->runWithParamsInternal()
+#17 Z:\home\galery\www\yii\framework\web\CController.php(309): CInlineAction->runWithParams()
+#18 Z:\home\galery\www\yii\framework\web\CController.php(287): ImagesController->runAction()
+#19 Z:\home\galery\www\yii\framework\web\CController.php(266): ImagesController->runActionWithFilters()
+#20 Z:\home\galery\www\yii\framework\web\CWebApplication.php(276): ImagesController->run()
+#21 Z:\home\galery\www\yii\framework\web\CWebApplication.php(135): CWebApplication->runController()
+#22 Z:\home\galery\www\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#23 Z:\home\galery\www\galery\index.php(14): CWebApplication->run()
+REQUEST_URI=/galery/index.php?r=images/admin&id=15
+in Z:\home\galery\www\galery\protected\views\layouts\main.php (44)
+in Z:\home\galery\www\galery\protected\views\layouts\column1.php (5)
+in Z:\home\galery\www\galery\protected\controllers\ImagesController.php (25)
+2012/04/22 12:35:25 [error] [php] Illegal offset type (Z:\home\galery\www\galery\protected\views\images\index.php:3)
+Stack trace:
+#0 Z:\home\galery\www\yii\framework\web\CController.php(870): ImagesController->renderFile()
+#1 Z:\home\galery\www\yii\framework\web\CController.php(783): ImagesController->renderPartial()
+#2 Z:\home\galery\www\galery\protected\controllers\ImagesController.php(25): ImagesController->render()
+#3 unknown(0): ImagesController->actionAdmin()
+#4 Z:\home\galery\www\yii\framework\web\actions\CAction.php(107): ReflectionMethod->invokeArgs()
+#5 Z:\home\galery\www\yii\framework\web\actions\CInlineAction.php(48): CInlineAction->runWithParamsInternal()
+#6 Z:\home\galery\www\yii\framework\web\CController.php(309): CInlineAction->runWithParams()
+#7 Z:\home\galery\www\yii\framework\web\CController.php(287): ImagesController->runAction()
+#8 Z:\home\galery\www\yii\framework\web\CController.php(266): ImagesController->runActionWithFilters()
+#9 Z:\home\galery\www\yii\framework\web\CWebApplication.php(276): ImagesController->run()
+#10 Z:\home\galery\www\yii\framework\web\CWebApplication.php(135): CWebApplication->runController()
+#11 Z:\home\galery\www\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#12 Z:\home\galery\www\galery\index.php(14): CWebApplication->run()
+REQUEST_URI=/galery/index.php?r=images/admin&id=15
+in Z:\home\galery\www\galery\protected\views\images\index.php (3)
+in Z:\home\galery\www\galery\protected\controllers\ImagesController.php (25)
+in Z:\home\galery\www\galery\index.php (14)
+2012/04/22 12:46:13 [error] [exception.CException] exception 'CException' with message 'ImagesController and its behaviors do not have a method or closure named "loadModel".' in Z:\home\galery\www\yii\framework\base\CComponent.php:266
+Stack trace:
+#0 Z:\home\galery\www\galery\protected\controllers\ImagesController.php(30): CComponent->__call('loadModel', Array)
+#1 Z:\home\galery\www\galery\protected\controllers\ImagesController.php(30): ImagesController->loadModel('6')
+#2 [internal function]: ImagesController->actionUpdate('6')
+#3 Z:\home\galery\www\yii\framework\web\actions\CAction.php(107): ReflectionMethod->invokeArgs(Object(ImagesController), Array)
+#4 Z:\home\galery\www\yii\framework\web\actions\CInlineAction.php(48): CAction->runWithParamsInternal(Object(ImagesController), Object(ReflectionMethod), Array)
+#5 Z:\home\galery\www\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#6 Z:\home\galery\www\yii\framework\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#7 Z:\home\galery\www\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 Z:\home\galery\www\yii\framework\web\CWebApplication.php(276): CController->run('update')
+#9 Z:\home\galery\www\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('images/update')
+#10 Z:\home\galery\www\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#11 Z:\home\galery\www\galery\index.php(14): CApplication->run()
+#12 {main}
+REQUEST_URI=/galery/index.php?r=images/update&id=6
+HTTP_REFERER=http://galery/galery/index.php?r=images/admin&id=15
+---
+2012/04/22 12:46:32 [error] [exception.CException] exception 'CException' with message 'ImagesController and its behaviors do not have a method or closure named "loadModel".' in Z:\home\galery\www\yii\framework\base\CComponent.php:266
+Stack trace:
+#0 Z:\home\galery\www\galery\protected\controllers\ImagesController.php(30): CComponent->__call('loadModel', Array)
+#1 Z:\home\galery\www\galery\protected\controllers\ImagesController.php(30): ImagesController->loadModel('6')
+#2 [internal function]: ImagesController->actionUpdate('6')
+#3 Z:\home\galery\www\yii\framework\web\actions\CAction.php(107): ReflectionMethod->invokeArgs(Object(ImagesController), Array)
+#4 Z:\home\galery\www\yii\framework\web\actions\CInlineAction.php(48): CAction->runWithParamsInternal(Object(ImagesController), Object(ReflectionMethod), Array)
+#5 Z:\home\galery\www\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#6 Z:\home\galery\www\yii\framework\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#7 Z:\home\galery\www\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 Z:\home\galery\www\yii\framework\web\CWebApplication.php(276): CController->run('update')
+#9 Z:\home\galery\www\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('images/update')
+#10 Z:\home\galery\www\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#11 Z:\home\galery\www\galery\index.php(14): CApplication->run()
+#12 {main}
+REQUEST_URI=/galery/index.php?r=images/update&id=6
+HTTP_REFERER=http://galery/galery/index.php?r=images/admin&id=15
+---
+2012/04/22 12:52:38 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The requested page does not exist.' in Z:\home\galery\www\galery\protected\controllers\AlbumsController.php:205
+Stack trace:
+#0 Z:\home\galery\www\galery\protected\controllers\AlbumsController.php(54): AlbumsController->loadModel('6')
+#1 [internal function]: AlbumsController->actionView('6')
+#2 Z:\home\galery\www\yii\framework\web\actions\CAction.php(107): ReflectionMethod->invokeArgs(Object(AlbumsController), Array)
+#3 Z:\home\galery\www\yii\framework\web\actions\CInlineAction.php(48): CAction->runWithParamsInternal(Object(AlbumsController), Object(ReflectionMethod), Array)
+#4 Z:\home\galery\www\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#5 Z:\home\galery\www\yii\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#6 Z:\home\galery\www\yii\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#7 Z:\home\galery\www\yii\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#8 Z:\home\galery\www\yii\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#9 Z:\home\galery\www\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#10 Z:\home\galery\www\yii\framework\web\CController.php(292): CFilterChain->run()
+#11 Z:\home\galery\www\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 Z:\home\galery\www\yii\framework\web\CWebApplication.php(276): CController->run('view')
+#13 Z:\home\galery\www\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('albums/view')
+#14 Z:\home\galery\www\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#15 Z:\home\galery\www\galery\index.php(14): CApplication->run()
+#16 {main}
+REQUEST_URI=/galery/index.php?r=albums/view&id=6
+HTTP_REFERER=http://galery/galery/index.php?r=images/update&id=6
+---
+2012/04/22 13:05:10 [error] [exception.CException] exception 'CException' with message 'ImagesController contains improperly nested widget tags in its view "Z:\home\galery\www\galery\protected\views\images\_update.php". A CActiveForm widget does not have an endWidget() call.' in Z:\home\galery\www\yii\framework\web\CBaseController.php:102
+Stack trace:
+#0 Z:\home\galery\www\yii\framework\web\CController.php(870): CBaseController->renderFile('Z:\home\galery\...', Array, true)
+#1 Z:\home\galery\www\galery\protected\views\images\update.php(9): CController->renderPartial('_update', Array)
+#2 Z:\home\galery\www\yii\framework\web\CBaseController.php(127): require('Z:\home\galery\...')
+#3 Z:\home\galery\www\yii\framework\web\CBaseController.php(96): CBaseController->renderInternal('Z:\home\galery\...', Array, true)
+#4 Z:\home\galery\www\yii\framework\web\CController.php(870): CBaseController->renderFile('Z:\home\galery\...', Array, true)
+#5 Z:\home\galery\www\yii\framework\web\CController.php(783): CController->renderPartial('update', Array, true)
+#6 Z:\home\galery\www\galery\protected\controllers\ImagesController.php(39): CController->render('update', Array)
+#7 [internal function]: ImagesController->actionUpdate('6')
+#8 Z:\home\galery\www\yii\framework\web\actions\CAction.php(107): ReflectionMethod->invokeArgs(Object(ImagesController), Array)
+#9 Z:\home\galery\www\yii\framework\web\actions\CInlineAction.php(48): CAction->runWithParamsInternal(Object(ImagesController), Object(ReflectionMethod), Array)
+#10 Z:\home\galery\www\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#11 Z:\home\galery\www\yii\framework\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#12 Z:\home\galery\www\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 Z:\home\galery\www\yii\framework\web\CWebApplication.php(276): CController->run('update')
+#14 Z:\home\galery\www\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('images/update')
+#15 Z:\home\galery\www\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#16 Z:\home\galery\www\galery\index.php(14): CApplication->run()
+#17 {main}
+REQUEST_URI=/galery/index.php?r=images/update&id=6
+HTTP_REFERER=http://galery/galery/index.php?r=images/admin&id=15
+---
+2012/04/22 13:05:37 [error] [exception.CException] exception 'CException' with message 'CActiveForm has an extra endWidget() call in its view.' in Z:\home\galery\www\yii\framework\web\CBaseController.php:211
+Stack trace:
+#0 Z:\home\galery\www\galery\protected\views\images\_update.php(18): CBaseController->endWidget()
+#1 Z:\home\galery\www\yii\framework\web\CBaseController.php(127): require('Z:\home\galery\...')
+#2 Z:\home\galery\www\yii\framework\web\CBaseController.php(96): CBaseController->renderInternal('Z:\home\galery\...', Array, true)
+#3 Z:\home\galery\www\yii\framework\web\CController.php(870): CBaseController->renderFile('Z:\home\galery\...', Array, true)
+#4 Z:\home\galery\www\galery\protected\views\images\update.php(9): CController->renderPartial('_update', Array)
+#5 Z:\home\galery\www\yii\framework\web\CBaseController.php(127): require('Z:\home\galery\...')
+#6 Z:\home\galery\www\yii\framework\web\CBaseController.php(96): CBaseController->renderInternal('Z:\home\galery\...', Array, true)
+#7 Z:\home\galery\www\yii\framework\web\CController.php(870): CBaseController->renderFile('Z:\home\galery\...', Array, true)
+#8 Z:\home\galery\www\yii\framework\web\CController.php(783): CController->renderPartial('update', Array, true)
+#9 Z:\home\galery\www\galery\protected\controllers\ImagesController.php(39): CController->render('update', Array)
+#10 [internal function]: ImagesController->actionUpdate('6')
+#11 Z:\home\galery\www\yii\framework\web\actions\CAction.php(107): ReflectionMethod->invokeArgs(Object(ImagesController), Array)
+#12 Z:\home\galery\www\yii\framework\web\actions\CInlineAction.php(48): CAction->runWithParamsInternal(Object(ImagesController), Object(ReflectionMethod), Array)
+#13 Z:\home\galery\www\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#14 Z:\home\galery\www\yii\framework\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#15 Z:\home\galery\www\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#16 Z:\home\galery\www\yii\framework\web\CWebApplication.php(276): CController->run('update')
+#17 Z:\home\galery\www\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('images/update')
+#18 Z:\home\galery\www\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#19 Z:\home\galery\www\galery\index.php(14): CApplication->run()
+#20 {main}
+REQUEST_URI=/galery/index.php?r=images/update&id=6
+HTTP_REFERER=http://galery/galery/index.php?r=images/admin&id=15
+---
+2012/06/06 17:16:22 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in Z:\home\galery\www\yii\framework\web\CController.php:337
+Stack trace:
+#0 Z:\home\galery\www\yii\framework\web\CController.php(310): CController->invalidActionParams(Object(CInlineAction))
+#1 Z:\home\galery\www\yii\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#2 Z:\home\galery\www\yii\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#3 Z:\home\galery\www\yii\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#4 Z:\home\galery\www\yii\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#5 Z:\home\galery\www\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#6 Z:\home\galery\www\yii\framework\web\CController.php(292): CFilterChain->run()
+#7 Z:\home\galery\www\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 Z:\home\galery\www\yii\framework\web\CWebApplication.php(276): CController->run('index')
+#9 Z:\home\galery\www\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('albums/index')
+#10 Z:\home\galery\www\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#11 Z:\home\galery\www\galery\index.php(14): CApplication->run()
+#12 {main}
+REQUEST_URI=/galery/index.php?r=albums/index
+HTTP_REFERER=http://galery/galery/index.php?r=albums/update&id=17
+---
+2012/06/06 17:16:32 [error] [application] Такая папка уже есть
+in Z:\home\galery\www\galery\protected\models\Albums.php (92)
+in Z:\home\galery\www\galery\protected\controllers\AlbumsController.php (99)
+in Z:\home\galery\www\galery\index.php (14)
+2012/06/06 17:16:42 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "delete".' in Z:\home\galery\www\yii\framework\web\CController.php:484
+Stack trace:
+#0 Z:\home\galery\www\yii\framework\web\CController.php(271): CController->missingAction('delete')
+#1 Z:\home\galery\www\yii\framework\web\CWebApplication.php(276): CController->run('delete')
+#2 Z:\home\galery\www\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('images/delete')
+#3 Z:\home\galery\www\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 Z:\home\galery\www\galery\index.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/galery/index.php?r=images%2Fdelete&id=16&ajax=images-grid
+HTTP_REFERER=http://galery/galery/index.php?r=images/admin&id=17
+---
+2012/06/06 17:26:34 [error] [application] Такая папка уже есть
+in Z:\home\galery\www\galery\protected\models\Albums.php (92)
+in Z:\home\galery\www\galery\protected\controllers\AlbumsController.php (99)
+in Z:\home\galery\www\galery\index.php (14)
+2012/06/06 17:38:58 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "view".' in Z:\home\galery\www\yii\framework\web\CController.php:484
+Stack trace:
+#0 Z:\home\galery\www\yii\framework\web\CController.php(271): CController->missingAction('view')
+#1 Z:\home\galery\www\yii\framework\web\CWebApplication.php(276): CController->run('view')
+#2 Z:\home\galery\www\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('images/view')
+#3 Z:\home\galery\www\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 Z:\home\galery\www\galery\index.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/galery/index.php?r=images/view&id=16
+HTTP_REFERER=http://galery/galery/index.php?r=images/update&id=16
+---
+2012/06/06 17:51:09 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "delete".' in Z:\home\galery\www\yii\framework\web\CController.php:484
+Stack trace:
+#0 Z:\home\galery\www\yii\framework\web\CController.php(271): CController->missingAction('delete')
+#1 Z:\home\galery\www\yii\framework\web\CWebApplication.php(276): CController->run('delete')
+#2 Z:\home\galery\www\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('images/delete')
+#3 Z:\home\galery\www\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 Z:\home\galery\www\galery\index.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/galery/index.php?r=images%2Fdelete&id=16&ajax=images-grid
+HTTP_REFERER=http://galery/galery/index.php?r=images/admin&id=17
+---
+2012/06/06 17:57:48 [error] [application] Такая папка уже есть
+in Z:\home\galery\www\galery\protected\models\Albums.php (92)
+in Z:\home\galery\www\galery\protected\controllers\AlbumsController.php (99)
+in Z:\home\galery\www\galery\index.php (14)

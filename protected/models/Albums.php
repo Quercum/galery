@@ -66,32 +66,32 @@ class Albums extends CActiveRecord
 			'title' => 'Название',
 		);
 	}
-        
+
         protected function beforeSave()
         {
             if(parent::beforeSave())
             {
                 if($this->isNewRecord)
                 {
-                    $this->user_id = Yii::app()->user->id;                    
+                    $this->user_id = Yii::app()->user->id;
                 }
                 return true;
             }else
                 return false;
         }
-        
+
         protected function afterSave()
         {
-            parent::afterSave();           
+            parent::afterSave();
             $id=$this->getIdByTitle($this->title);
             if(!file_exists('images/'.Yii::app()->user->id.'/'.$id))
-            {                    
+            {
             if(!mkdir('images/'.Yii::app()->user->id.'/'.$id, 0777))
                 Yii::log('Папка не создана', CLogger::LEVEL_ERROR);
             }else{
                 Yii::log('Такая папка уже есть', CLogger::LEVEL_ERROR);
             }
-            
+
         }
 
 	/**
@@ -113,7 +113,7 @@ class Albums extends CActiveRecord
 			'criteria'=>$criteria,
 		));
 	}
-        
+
         public function getCount($userId)
         {
             return Albums::model()->count(array(
@@ -121,7 +121,7 @@ class Albums extends CActiveRecord
                 'params'=>array(':userId'=>$userId),
             ));
         }
-        
+
         public function getIdByTitle($title)
         {
             $record = Albums::model()->find(array(
@@ -134,20 +134,20 @@ class Albums extends CActiveRecord
             ));
             return $record->id;
         }
-        
+
         public function cleanAlbum($path)
-        {            
+        {
             $handle = opendir($path);
             while (!false == ($file = readdir($handle)))
             {
                 if(($file!='.') && ($file!='..'))
-                {                   
+                {
                     unlink($path.'/'.$file);
                 }
             }
             closedir($handle);
         }
-        
+
         public function getAlbumAuthor($id)
         {
             $criteria = new CDbCriteria(array(
@@ -159,5 +159,16 @@ class Albums extends CActiveRecord
             ));
               $album = Albums::model()->find($criteria);
               return $album->user_id;
+        }
+
+        public function getTitleById($id)
+        {
+            return Albums::model()->find(array(
+                'select'=>'title',
+                'condition'=>'id=:id',
+                'params'=>array(
+                    ':id'=>$id,
+                ),
+            ));
         }
 }

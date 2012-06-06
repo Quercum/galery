@@ -15,3 +15,7 @@
 #galery_item p {
     margin: 0;
 }
+
+#galery_small_img img {
+    width: 130px;
+}

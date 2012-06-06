@@ -40,6 +40,7 @@ class Images extends CActiveRecord
 		// will receive user inputs.
 		return array(
 			array('album_id', 'numerical', 'integerOnly'=>true),
+                        array('title','required', 'on'=>'edit'),
 			array('title', 'length', 'max'=>90),
 			array('filename', 'length', 'max'=>255),
                         array('image','file','types'=>'jpg, jpeg, png'),
@@ -95,7 +96,7 @@ class Images extends CActiveRecord
 			'criteria'=>$criteria,
 		));
 	}
-        
+
         /**
          * Путь к последней сохраненной картинке
          * @param integer $userId Id пользователя
@@ -111,14 +112,20 @@ class Images extends CActiveRecord
             ));
             $image = Images::model()->find($criteria);
             $count = Images::model()->count($criteria);
-            if($count>1)
+            if($count>=1)
                 return Yii::app()->baseUrl.'/images/'.$userId.'/'.$image->album_id.
                     '/'.$image->filename;
             else
                 return Yii::app()->baseUrl.'/images/nopic.jpg';
-            
+
         }
-        
+
+        /**
+         * Возвращает путь к последней картинке
+         * в альбоме
+         * @param integer $albumId
+         * @return string
+         */
         public function getLastFromAlb($albumId)
         {
             $criteria = new CDbCriteria(array(
@@ -135,7 +142,7 @@ class Images extends CActiveRecord
             else
                 return Yii::app()->baseUrl.'/images/nopic.jpg';
         }
-        
+
         public function getData($albumId)
         {
             $criteria = new CDbCriteria(array(
@@ -151,7 +158,7 @@ class Images extends CActiveRecord
                 'criteria'=>$criteria,
             ));
         }
-        
+
         public function getFilePath($id)
         {
             $criteria = new CDbCriteria(array(
